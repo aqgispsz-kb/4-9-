@@ -249,9 +249,7 @@ src="https://www.facebook.com/tr?id=1315057003852319&ev=PageView&noscript=1"/>
 
 <nav>
     <div class="logo">全台互助會</div>
-    <a class="join-btn" href="https://line.me/ti/p/~@693shdql" target="_blank"
-    onclick="fbq('track','Lead'); setTimeout(()=>{window.open(this.href,'_blank')},300); return false;">
-    加入我們</a>
+    <a class="join-btn" href="https://line.me/ti/p/~@693shdql" target="_blank">加入我們</a>
 </nav>
 
 <section class="hero">
@@ -284,14 +282,12 @@ src="https://www.facebook.com/tr?id=1315057003852319&ev=PageView&noscript=1"/>
 </div>
 
 <div class="cta">
-    <a href="https://line.me/ti/p/~@693shdql" target="_blank"
-    onclick="fbq('track','Lead'); setTimeout(()=>{window.open(this.href,'_blank')},300); return false;">
+    <a href="https://line.me/ti/p/~@693shdql" target="_blank">
         👉 立即加入LINE諮詢
     </a>
 </div>
 
-<a class="floating" href="https://line.me/ti/p/~@693shdql" target="_blank"
-onclick="fbq('track','Lead'); setTimeout(()=>{window.open(this.href,'_blank')},300); return false;">
+<a class="floating" href="https://line.me/ti/p/~@693shdql" target="_blank">
     LINE立即諮詢
 </a>
 
@@ -336,6 +332,19 @@ function loop(){
     setTimeout(loop,1500+Math.random()*2500);
 }
 setTimeout(loop,1000);
+
+/* 🔥 LINE 點擊追蹤（穩定版） */
+document.querySelectorAll('a[href*="line.me"]').forEach(btn=>{
+    btn.addEventListener('click', function(e){
+        fbq('track','Lead');
+
+        setTimeout(()=>{
+            window.open(this.href,'_blank');
+        },300);
+
+        e.preventDefault();
+    });
+});
 </script>
 
 </body>
